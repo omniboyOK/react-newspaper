@@ -14,7 +14,7 @@ class App extends Component {
 
   consultarNoticias = async (categoria) => {
     const uri =
-      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=bxGlWsCJOETPGjfULoUPDvt3RBclFgCn`;
+      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=` + process.env.API_KEY;
 
     const respuesta = await fetch(uri);
     const noticias = await respuesta.json();
