@@ -2,11 +2,13 @@ import React from "react";
 
 const Noticia = ({ noticia }) => {
   const { url, title, section, subsection, multimedia, abstract } = noticia;
+  console.log(multimedia)
+  let image = multimedia.length > 0 ? multimedia[3].url : "https://static01.nyt.com/newsgraphics/images/icons/defaultPromoCrop.png";
   return (
     <div className="col s12 m6 l4">
       <div className="card blue-grey darken-1">
         <div className="card-image">
-          <img src="https://static01.nyt.com/images/2019/12/11/science/11CAVEART03/11CAVEART03-thumbStandard.jpg" alt={title} />
+          <img src={image} alt={title} />
         </div>
 
         <div className="card-content white-text">
