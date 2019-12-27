@@ -9,12 +9,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.consultarNoticias();
-  }
+    this.consultarNoticias('home');
+  };
 
-  consultarNoticias = async () => {
+  consultarNoticias = async (categoria) => {
     const uri =
-      "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=bxGlWsCJOETPGjfULoUPDvt3RBclFgCn";
+      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=bxGlWsCJOETPGjfULoUPDvt3RBclFgCn`;
 
     const respuesta = await fetch(uri);
     const noticias = await respuesta.json();
@@ -28,7 +28,9 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Formulario />
+        <Formulario 
+          consultarNoticias = {this.consultarNoticias}
+        />
         <div className="container">
           <ListaNoticias noticias={this.state.noticias} />
         </div>
