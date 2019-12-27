@@ -79,7 +79,7 @@ class Formulario extends Component {
       <div className="buscador row">
         <div className="col s12 m8 offset-2">
           <form>
-            <h4>Filtrar por categoria</h4>
+            <h4>Explore Categories</h4>
             <div className="input-field col s12 m8">
               <select onChange={this.cambiarCategoria}>
                 {this.state.categorias.map((categoria, index) => {
