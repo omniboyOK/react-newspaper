@@ -1,17 +1,40 @@
-import React, {Component, Fragment} from 'react';
-import Header from './components/header/header';
+import React, { Component, Fragment } from "react";
+import Header from "./components/header/header";
+import ListaNoticias from "./components/listaNoticias/listaNoticias";
+import Formulario from "./components/formulario/formulario";
 
 class App extends Component {
-  state = {  }
-  render() { 
-    return ( 
-    <Fragment>
-      <Header
-        titulo="Noticias React"
-      />
-    </Fragment>
+  state = {
+    noticias: []
+  };
+
+  componentDidMount() {
+    this.consultarNoticias();
+  }
+
+  consultarNoticias = async () => {
+    const uri =
+      "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=bxGlWsCJOETPGjfULoUPDvt3RBclFgCn";
+
+    const respuesta = await fetch(uri);
+    const noticias = await respuesta.json();
+    
+    this.setState({
+      noticias: noticias.results
+    });
+  };
+
+  render() {
+    return (
+      <Fragment>
+        <Header />
+        <Formulario />
+        <div className="container">
+          <ListaNoticias noticias={this.state.noticias} />
+        </div>
+      </Fragment>
     );
   }
 }
- 
+
 export default App;

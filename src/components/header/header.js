@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Header = ({titulo}) => (
-    <nav className="nav-wrapper light-blue darken-3">
-        <a className="brand-logo center">{titulo}</a>
-    </nav>
-)
+const Header = () => (
+  <nav className="nav-wrapper blue-grey darken-3">
+    <div className="brand-logo center">
+      New York Times Top News
+    </div>
+  </nav>
+);
 
 export default Header;
