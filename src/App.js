@@ -2,11 +2,12 @@ import React, { Component, Fragment } from "react";
 import Header from "./components/header/header";
 import ListaNoticias from "./components/listaNoticias/listaNoticias";
 import Formulario from "./components/formulario/formulario";
+const apikey = process.env.API_KEY;
+console.log(apikey)
 
 class App extends Component {
   state = {
-    noticias: [],
-    apikey: process.env.API_KEY
+    noticias: []
   };
 
   componentDidMount() {
@@ -15,7 +16,7 @@ class App extends Component {
 
   consultarNoticias = async (categoria) => {
     const uri =
-      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${this.state.apikey}`;
+      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${apikey}`;
 
     const respuesta = await fetch(uri);
     const noticias = await respuesta.json();
