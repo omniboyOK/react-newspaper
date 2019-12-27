@@ -5,7 +5,8 @@ import Formulario from "./components/formulario/formulario";
 
 class App extends Component {
   state = {
-    noticias: []
+    noticias: [],
+    apikey: process.env.API_KEY
   };
 
   componentDidMount() {
@@ -14,7 +15,7 @@ class App extends Component {
 
   consultarNoticias = async (categoria) => {
     const uri =
-      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=` + process.env.API_KEY;
+      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${this.state.apikey}`;
 
     const respuesta = await fetch(uri);
     const noticias = await respuesta.json();
