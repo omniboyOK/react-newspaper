@@ -1,12 +1,22 @@
-## Resumen
+## Noticias del New York Times 📰
 
-Aplicación web hecha con Create-React-App y Express 
-## Available Scripts
+Proyecto en React y Express.
 
-In the project directory, you can run:
+## Que necesitas?
 
-### `yarn start`
+Para este proyecto utiliza `yarn install` para instalar las dependencias.
 
-This will start express server on port 8080
+Támbien necesitaras una `api key` del New York Times.
+Puedes conseguirla [aqui](https://developer.nytimes.com).
 
-Remember 
+Deberas cambiar las rutas a gusto para que funcione de forma local o en tu servidor.
+
+## Que puedo hacer?
+
+Despliego una lista de las noticias que son tendencia, y puedo separarlas por categoria.
+
+Tengo un servidor express que se encarga de manejar las consultas a la API, y una ruta middleware que permite al cliente interactuar con el servidor. Todo en uno joder!
+
+## Demo
+
+Puedes probar lo que hago en el [aqui!](https://react-news-omniboy.herokuapp.com)💻
