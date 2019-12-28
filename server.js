@@ -4,6 +4,7 @@ const favicon = require("express-favicon");
 const request = require('request-promise-native')
 const path = require("path");
 const port = process.env.PORT || 8080;
+const apikey = process.env.API_KEY;
 const app = express();
 app.use(favicon(__dirname + "/build/favicon.ico"));
 // the __dirname is the current directory from where the script is running
@@ -19,7 +20,7 @@ app.get("/", function (req, res) {
 app.get("/api/", async (req, res) => {
   //paso los datos de categoria a la api
   let categoria = req.query.categoria;
-  const uri = `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=bxGlWsCJOETPGjfULoUPDvt3RBclFgCn`;
+  const uri = `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${API_KEY}`;
   //llamo a la api del diario
   const api_res = await request(uri)
     .catch(err => {
