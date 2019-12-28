@@ -2,8 +2,6 @@ import React, { Component, Fragment } from "react";
 import Header from "./components/header/header";
 import ListaNoticias from "./components/listaNoticias/listaNoticias";
 import Formulario from "./components/formulario/formulario";
-const apikey = process.env.API_KEY;
-console.log(apikey)
 
 class App extends Component {
   state = {
@@ -15,11 +13,11 @@ class App extends Component {
   };
 
   consultarNoticias = async (categoria) => {
-    const uri =
-      `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${apikey}`;
-
-    const respuesta = await fetch(uri);
-    const noticias = await respuesta.json();
+    
+    const respuesta = await fetch('http://localhost:8080/api/?categoria='+categoria);
+    //transformo la respuesta en json
+    const noticias = await respuesta.json()
+    console.log(noticias)
     
     this.setState({
       noticias: noticias.results
