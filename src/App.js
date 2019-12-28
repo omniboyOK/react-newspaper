@@ -14,7 +14,7 @@ class App extends Component {
 
   consultarNoticias = async (categoria) => {
     
-    const respuesta = await fetch('http://localhost:8080/api/?categoria='+categoria);
+    const respuesta = await fetch('https://react-news-omniboy.herokuapp.com/api/?categoria='+categoria);
     //transformo la respuesta en json
     const noticias = await respuesta.json()
     console.log(noticias)
