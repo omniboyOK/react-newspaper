@@ -20,7 +20,7 @@ app.get("/", function (req, res) {
 app.get("/api/", async (req, res) => {
   //paso los datos de categoria a la api
   let categoria = req.query.categoria;
-  const uri = `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${API_KEY}`;
+  const uri = `https://api.nytimes.com/svc/topstories/v2/${categoria}.json?api-key=${apikey}`;
   //llamo a la api del diario
   const api_res = await request(uri)
     .catch(err => {
