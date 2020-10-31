@@ -15,7 +15,7 @@ Deberas cambiar las rutas a gusto para que funcione de forma local o en tu servi
 
 Despliego una lista de las noticias que son tendencia, y puedo separarlas por categoria.
 
-Tengo un servidor express que se encarga de manejar las consultas a la API, y una ruta middleware que permite al cliente interactuar con el servidor. Todo en uno joder!
+Tengo un servidor express que se encarga de manejar las consultas a la API.
 
 ## Demo
 
